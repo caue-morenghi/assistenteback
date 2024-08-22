@@ -10,7 +10,7 @@ export default class AuthController {
       const user = await User.findBy('email', email)
       const token = await auth.use('api').attempt(email, password, {
         name: user?.serialize().email,
-        expiresIn: '30mins'
+        //expiresIn: '30mins'
       },)
       return {
         token,
