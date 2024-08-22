@@ -35,7 +35,9 @@ Server.middleware.register([() => import('@ioc:Adonis/Core/BodyParser')])
 |
 | and then use it as follows
 |
-| Route.get('dashboard', 'UserController.dashboard').middleware('auth')
+| Route.get('dashboard', '').middleware('auth')
 |
 */
-Server.middleware.registerNamed({})
+Server.middleware.registerNamed({
+    auth: () => import('App/Middleware/Auth')
+})
